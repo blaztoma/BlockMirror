@@ -151,18 +151,18 @@ function ISEOF(x) {
     return x == tokens.T_ENDMARKER;
 }
 
-Sk.token = {};
-Sk.token.tokens = tokens;
-Sk.token.tok_name = tok_name;
-Sk.token.EXACT_TOKEN_TYPES = EXACT_TOKEN_TYPES;
-Sk.token.ISTERMINAL = ISTERMINAL;
-Sk.token.ISNONTERMINAL = ISNONTERMINAL;
-Sk.token.ISEOF = ISEOF;
+SkAst.token = {};
+SkAst.token.tokens = tokens;
+SkAst.token.tok_name = tok_name;
+SkAst.token.EXACT_TOKEN_TYPES = EXACT_TOKEN_TYPES;
+SkAst.token.ISTERMINAL = ISTERMINAL;
+SkAst.token.ISNONTERMINAL = ISNONTERMINAL;
+SkAst.token.ISEOF = ISEOF;
 
-Sk.exportSymbol("Sk.token", Sk.token);
-Sk.exportSymbol("Sk.token.tokens", Sk.token.tokens);
-Sk.exportSymbol("Sk.token.tok_name", Sk.token.tok_name);
-Sk.exportSymbol("Sk.token.EXACT_TOKEN_TYPES");
-Sk.exportSymbol("Sk.token.ISTERMINAL", Sk.token.ISTERMINAL);
-Sk.exportSymbol("Sk.token.ISNONTERMINAL", Sk.token.ISNONTERMINAL);
-Sk.exportSymbol("Sk.token.ISEOF", Sk.token.ISEOF);
+SkAst.exportSymbol("Sk.token", SkAst.token);
+SkAst.exportSymbol("Sk.token.tokens", SkAst.token.tokens);
+SkAst.exportSymbol("Sk.token.tok_name", SkAst.token.tok_name);
+SkAst.exportSymbol("Sk.token.EXACT_TOKEN_TYPES");
+SkAst.exportSymbol("Sk.token.ISTERMINAL", SkAst.token.ISTERMINAL);
+SkAst.exportSymbol("Sk.token.ISNONTERMINAL", SkAst.token.ISNONTERMINAL);
+SkAst.exportSymbol("Sk.token.ISEOF", SkAst.token.ISEOF);

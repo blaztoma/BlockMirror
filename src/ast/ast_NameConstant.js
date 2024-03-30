@@ -36,13 +36,13 @@ Blockly.Python['ast_NameConstantNone'] = function (block) {
 BlockMirrorTextToBlocks.prototype['ast_NameConstant'] = function (node, parent) {
     let value = node.value;
 
-    if (value === Sk.builtin.none.none$) {
+    if (value === SkAst.builtin.none.none$) {
         return BlockMirrorTextToBlocks.create_block('ast_NameConstantNone', node.lineno, {});
-    } else if (value === Sk.builtin.bool.true$) {
+    } else if (value === SkAst.builtin.bool.true$) {
         return BlockMirrorTextToBlocks.create_block('ast_NameConstantBoolean', node.lineno, {
             "BOOL": 'TRUE'
         });
-    } else if (value === Sk.builtin.bool.false$) {
+    } else if (value === SkAst.builtin.bool.false$) {
         return BlockMirrorTextToBlocks.create_block('ast_NameConstantBoolean', node.lineno, {
             "BOOL": 'FALSE'
         });

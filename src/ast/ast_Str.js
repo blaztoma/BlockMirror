@@ -177,7 +177,7 @@ BlockMirrorTextToBlocks.prototype.dedent = function (text, levels, isDocString) 
 // TODO: Handle indentation intelligently
 BlockMirrorTextToBlocks.prototype['ast_Str'] = function (node, parent) {
     let s = node.s;
-    let text = Sk.ffi.remapToJs(s);
+    let text = SkAst.ffi.remapToJs(s);
     const regex = BlockMirrorTextEditor.REGEX_PATTERNS[this.blockMirror.configuration.imageDetection];
     //console.log(text, regex.test(JSON.stringify(text)));
     if (regex.test(JSON.stringify(text))) {

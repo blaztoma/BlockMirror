@@ -143,9 +143,9 @@ BlockMirrorTextToBlocks.prototype.getBuiltinAnnotation = function (annotation) {
     let result = false;
     // Can we turn it into a basic type?
     if (annotation._astname === 'Name') {
-        result = Sk.ffi.remapToJs(annotation.id);
+        result = SkAst.ffi.remapToJs(annotation.id);
     } else if (annotation._astname === 'Str') {
-        result = Sk.ffi.remapToJs(annotation.s);
+        result = SkAst.ffi.remapToJs(annotation.s);
     }
 
     // Potentially filter out unknown annotations

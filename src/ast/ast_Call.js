@@ -451,11 +451,11 @@ Blockly.Python['ast_Call'] = function (block) {
 
 BlockMirrorTextToBlocks.prototype.getAsModule = function (node) {
     if (node._astname === 'Name') {
-        return Sk.ffi.remapToJs(node.id);
+        return SkAst.ffi.remapToJs(node.id);
     } else if (node._astname === 'Attribute') {
         let origin = this.getAsModule(node.value);
         if (origin !== null) {
-            return origin + '.' + Sk.ffi.remapToJs(node.attr);
+            return origin + '.' + SkAst.ffi.remapToJs(node.attr);
         }
     } else {
         return null;
@@ -483,15 +483,15 @@ BlockMirrorTextToBlocks.prototype['ast_Call'] = function (node, parent) {
     let colour = BlockMirrorTextToBlocks.COLOR.FUNCTIONS;
 
     if (func._astname === 'Name') {
-        message = name = Sk.ffi.remapToJs(func.id);
+        message = name = SkAst.ffi.remapToJs(func.id);
         if (name in this.FUNCTION_SIGNATURES) {
-            signature = this.FUNCTION_SIGNATURES[Sk.ffi.remapToJs(func.id)];
+            signature = this.FUNCTION_SIGNATURES[SkAst.ffi.remapToJs(func.id)];
         }
     } else if (func._astname === 'Attribute') {
         isMethod = true;
         caller = func.value;
         let potentialModule = this.getAsModule(caller);
-        let attributeName = Sk.ffi.remapToJs(func.attr);
+        let attributeName = SkAst.ffi.remapToJs(func.attr);
         message = "." + attributeName;
         if (potentialModule in this.MODULE_FUNCTION_SIGNATURES) {
             signature = this.MODULE_FUNCTION_SIGNATURES[potentialModule][attributeName];
@@ -570,7 +570,7 @@ BlockMirrorTextToBlocks.prototype['ast_Call'] = function (node, parent) {
                 argumentsMutation["KWARGS:" + overallI] = null;
             } else {
                 argumentsNormal["ARG" + overallI] = this.convert(value, node);
-                argumentsMutation["KEYWORD:" + Sk.ffi.remapToJs(arg)] = null;
+                argumentsMutation["KEYWORD:" + SkAst.ffi.remapToJs(arg)] = null;
             }
         }
     }

@@ -1,8 +1,8 @@
-var Sk = {};
+var SkAst = {};
 
-Sk.exportSymbol = (name, module) => {
+SkAst.exportSymbol = (name, module) => {
     let parts = name.split(".");
-    let submodule = Sk;
+    let submodule = SkAst;
     let i;
     for (i = 1; i < parts.length-1; i++) {
         if (!(parts[i] in submodule)) {
@@ -11,8 +11,8 @@ Sk.exportSymbol = (name, module) => {
     }
     submodule[parts[i]] = module;
 };
-Sk.configure = (options) => {};
-Sk.builtin = {
+SkAst.configure = (options) => {};
+SkAst.builtin = {
     SyntaxError: function(message, filename, lineno, position) {
         this.message = message;
         this.filename = filename;
@@ -20,11 +20,11 @@ Sk.builtin = {
         this.position = position;
     },
     str: function(x) {
-        if (x instanceof Sk.builtin.str) {
+        if (x instanceof SkAst.builtin.str) {
             return x;
         }
-        if (!(this instanceof Sk.builtin.str)) {
-            return new Sk.builtin.str(x);
+        if (!(this instanceof SkAst.builtin.str)) {
+            return new SkAst.builtin.str(x);
         }
         this.v = x;
     },
@@ -40,11 +40,11 @@ Sk.builtin = {
     },
     none: { "none$": { v: null }}
 };
-Sk.builtin.int_.threshold$ = Infinity;
-Sk.builtin.str.prototype.sq$concat = function(other) {
-    return new Sk.builtin.str(this.v + other.v);
+SkAst.builtin.int_.threshold$ = Infinity;
+SkAst.builtin.str.prototype.sq$concat = function(other) {
+    return new SkAst.builtin.str(this.v + other.v);
 };
-Sk.__future__ = {
+SkAst.__future__ = {
     print_function: true,
     division: true,
     absolute_import: null,
@@ -67,10 +67,10 @@ Sk.__future__ = {
     l_suffix: false,
     silent_octal_literal: false
 };
-Sk.asserts = {
+SkAst.asserts = {
     assert: (condition) => { if (!condition) { console.error(condition)}}
 };
-Sk.ffi = {
+SkAst.ffi = {
     remapToJs: (data) => {
         return data.v;
     }

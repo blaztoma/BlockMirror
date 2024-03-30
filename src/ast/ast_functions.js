@@ -9,7 +9,7 @@ BlockMirrorTextToBlocks['ast_Image'] = function (node, parent, bmttb) {
         throw "First argument for Image constructor must be string literal";
     }
     return BlockMirrorTextToBlocks.create_block("ast_Image", node.lineno, {}, {}, {},
-        {"@src": Sk.ffi.remapToJs(node.args[0].s)});
+        {"@src": SkAst.ffi.remapToJs(node.args[0].s)});
 };
 
 

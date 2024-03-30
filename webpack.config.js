@@ -125,7 +125,8 @@ const config = {
         new MergeIntoSingleFilePlugin({
             files: {
                 "skulpt_parser.js": JS_SKULPT_PARSER_FILES,
-                "block_mirror.js": JS_BLOCKMIRROR_FILES,
+/*                "block_mirror.js": JS_BLOCKMIRROR_FILES, */
+		        "block_mirror.min.js": JS_BLOCKMIRROR_FILES,
                 "block_mirror.css": [
                     /*path.resolve(__dirname, 'lib/codemirror/codemirror.css'),
                     path.resolve(__dirname, 'lib/codemirror/fullscreen.css'),

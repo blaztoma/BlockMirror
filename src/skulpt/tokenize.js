@@ -1,7 +1,7 @@
-var tokens = Sk.token.tokens;
+var tokens = SkAst.token.tokens;
 
-const TokenError = Sk.builtin.SyntaxError;
-const IndentationError = Sk.builtin.SyntaxError;
+const TokenError = SkAst.builtin.SyntaxError;
+const IndentationError = SkAst.builtin.SyntaxError;
 
 /**
  *
@@ -21,8 +21,8 @@ function TokenInfo(type, string, start, end, line) {
 }
 
 TokenInfo.prototype.exact_type = function() {
-    if (this.type == tokens.T_OP && this.string in Sk.token.EXACT_TOKEN_TYPES) {
-    return Sk.token.EXACT_TOKEN_TYPES[this.string]
+    if (this.type == tokens.T_OP && this.string in SkAst.token.EXACT_TOKEN_TYPES) {
+    return SkAst.token.EXACT_TOKEN_TYPES[this.string]
     } else {
         return this.type
     }
@@ -167,7 +167,7 @@ var String_ = group(StringPrefix + "'[^\\n'\\\\]*(?:\\\\.[^\\n'\\\\]*)*'",
 // Sorting in reverse order puts the long operators before their prefixes.
 // Otherwise if = came before ==, == would get recognized as two instances
 // of =.
-var EXACT_TOKENS_SORTED = Object.keys(Sk.token.EXACT_TOKEN_TYPES).sort();
+var EXACT_TOKENS_SORTED = Object.keys(SkAst.token.EXACT_TOKEN_TYPES).sort();
 var Special = group.apply(this, EXACT_TOKENS_SORTED.reverse().map(function (t) { return regexEscape(t); }));
 var Funny = group('\\r?\\n', Special);
 
@@ -211,22 +211,22 @@ var PseudoTokenRegex;
 function _setupTokenRegexes() {
     // we make these regexes here because they can
     // be changed by the configuration.
-    var LSuffix = Sk.__future__.l_suffix ? '(?:L?)' : '';
+    var LSuffix = SkAst.__future__.l_suffix ? '(?:L?)' : '';
     var Hexnumber = '0[xX](?:_?[0-9a-fA-F])+' + LSuffix;
     var Binnumber = '0[bB](?:_?[01])+' + LSuffix;
     var Octnumber = '0([oO])(?:_?[0-7])+' + LSuffix;
     var SilentOctnumber = '0([oO]?)(?:_?[0-7])+' + LSuffix;
     var Decnumber = '(?:0(?:_?0)*|[1-9](?:_?[0-9])*)' + LSuffix;
     var Intnumber = group(Hexnumber, Binnumber,
-                          (Sk.__future__.silent_octal_literal ? SilentOctnumber : Octnumber), Decnumber);
+                          (SkAst.__future__.silent_octal_literal ? SilentOctnumber : Octnumber), Decnumber);
     var Number_ = group(Imagnumber, Floatnumber, Intnumber);
     var PseudoToken = Whitespace + group(PseudoExtras, Number_, Funny, ContStr, Name);
     PseudoTokenRegex = RegExp(PseudoToken);
 }
 
-Sk._setupTokenRegexes = _setupTokenRegexes;
+SkAst._setupTokenRegexes = _setupTokenRegexes;
 
-Sk.exportSymbol("Sk._setupTokenRegexes", Sk._setupTokenRegexes);
+SkAst.exportSymbol("Sk._setupTokenRegexes", SkAst._setupTokenRegexes);
 
 /**
  * internal tokenize function
@@ -479,6 +479,6 @@ function _tokenize(readline, encoding, yield_, filename) {
     yield_(new TokenInfo(tokens.T_ENDMARKER, '', [lnum, 0], [lnum, 0], ''));
 }
 
-Sk._tokenize = _tokenize;
+SkAst._tokenize = _tokenize;
 
-Sk.exportSymbol("Sk._tokenize", Sk._tokenize);
+SkAst.exportSymbol("Sk._tokenize", SkAst._tokenize);

@@ -43,8 +43,8 @@ BlockMirrorTextToBlocks.prototype.convertSource = function (filename, python_sou
                     rawXml: xml};
         }
         try {
-            parse = Sk.parse(filename, python_source);
-            ast = Sk.astFromParse(parse.cst, filename, parse.flags);
+            parse = SkAst.parse(filename, python_source);
+            ast = SkAst.astFromParse(parse.cst, filename, parse.flags);
         } catch (e) {
             //console.error(e);
             error = e;

@@ -1,4 +1,4 @@
-Sk.asserts = {ENABLE_ASSERTS: true};
+SkAst.asserts = {ENABLE_ASSERTS: true};
 
 /**
  * Cause assertion failure when condition is false.
@@ -6,8 +6,8 @@ Sk.asserts = {ENABLE_ASSERTS: true};
  * @param {*} condition condition to check
  * @param {string=} message error message
  */
-Sk.asserts.assert = function (condition, message) {
-    if (Sk.asserts.ENABLE_ASSERTS && !condition) {
+SkAst.asserts.assert = function (condition, message) {
+    if (SkAst.asserts.ENABLE_ASSERTS && !condition) {
         var msg = "Assertion failure";
         if (message) {
             msg = msg + ": " + message;
@@ -16,15 +16,15 @@ Sk.asserts.assert = function (condition, message) {
     }
     return condition;
 };
-Sk.exportSymbol("Sk.asserts.assert", Sk.asserts.assert);
+SkAst.exportSymbol("Sk.asserts.assert", SkAst.asserts.assert);
 
 /**
  * Cause assertion failure.
  * 
  * @param {string=} message error message
  */
-Sk.asserts.fail = function (message) {
-    if (Sk.asserts.ENABLE_ASSERTS) {
+SkAst.asserts.fail = function (message) {
+    if (SkAst.asserts.ENABLE_ASSERTS) {
         var msg = "Assertion failure";
         if (message) {
             msg = msg + ": " + message;
@@ -32,4 +32,4 @@ Sk.asserts.fail = function (message) {
         throw new Error(msg);
     }
 };
-Sk.exportSymbol("Sk.asserts.fail", Sk.asserts.fail);
+SkAst.exportSymbol("Sk.asserts.fail", SkAst.asserts.fail);

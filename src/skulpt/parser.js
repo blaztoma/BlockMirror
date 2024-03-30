@@ -57,7 +57,7 @@ Parser.prototype.setup = function (start) {
     };
     this.stack = [stackentry];
     this.used_names = {};
-    Sk._setupTokenRegexes();
+    SkAst._setupTokenRegexes();
 };
 
 function findInDfa (a, obj) {
@@ -111,7 +111,7 @@ Parser.prototype.addtoken = function (type, value, context) {
             v = this.grammar.labels[i][1];
             if (ilabel === i) {
                 // look it up in the list of labels
-                Sk.asserts.assert(t < 256);
+                SkAst.asserts.assert(t < 256);
                 // shift a token; we're done with it
                 this.shift(type, value, newstate, context);
                 // pop while we are in an accept-only state
@@ -156,12 +156,12 @@ Parser.prototype.addtoken = function (type, value, context) {
             //print("WAA");
             this.pop();
             if (this.stack.length === 0) {
-                throw new Sk.builtin.SyntaxError("too much input", this.filename);
+                throw new SkAst.builtin.SyntaxError("too much input", this.filename);
             }
         } else {
             // no transition
             errline = context[0][0];
-            throw new Sk.builtin.SyntaxError("bad input", this.filename, errline, context);
+            throw new SkAst.builtin.SyntaxError("bad input", this.filename, errline, context);
         }
     }
 };
@@ -169,12 +169,12 @@ Parser.prototype.addtoken = function (type, value, context) {
 // turn a token into a label
 Parser.prototype.classify = function (type, value, context) {
     var ilabel;
-    if (type === Sk.token.tokens.T_NAME) {
+    if (type === SkAst.token.tokens.T_NAME) {
         this.used_names[value] = true;
         ilabel = this.grammar.keywords.hasOwnProperty(value) && this.grammar.keywords[value];
 
         /* Check for handling print as an builtin function */
-        if(value === "print" && (this.p_flags & Parser.CO_FUTURE_PRINT_FUNCTION || Sk.__future__.print_function === true)) {
+        if(value === "print" && (this.p_flags & Parser.CO_FUTURE_PRINT_FUNCTION || SkAst.__future__.print_function === true)) {
             ilabel = false; // ilabel determines if the value is a keyword
         }
 
@@ -189,14 +189,14 @@ Parser.prototype.classify = function (type, value, context) {
         // Questionable modification to put line number in position 2
         // like everywhere else and filename in position 1.
         let descr = "#"+type;
-        for (let i in Sk.token.tokens) {
-            if (Sk.token.tokens[i] == type) {
+        for (let i in SkAst.token.tokens) {
+            if (SkAst.token.tokens[i] == type) {
                 descr = i;
                 break;
             }
         }
 
-        throw new Sk.builtin.SyntaxError("bad token " + descr, this.filename, context[0][0], context);
+        throw new SkAst.builtin.SyntaxError("bad token " + descr, this.filename, context[0][0], context);
     }
     return ilabel;
 };
@@ -287,24 +287,24 @@ function makeParser (filename, style) {
     if (style === undefined) {
         style = "file_input";
     }
-    var p = new Parser(filename, Sk.ParseTables);
+    var p = new Parser(filename, SkAst.ParseTables);
     // for closure's benefit
     if (style === "file_input") {
-        p.setup(Sk.ParseTables.sym.file_input);
+        p.setup(SkAst.ParseTables.sym.file_input);
     } else {
-        Sk.asserts.fail("todo;");
+        SkAst.asserts.fail("todo;");
     }
     return p;
 }
 
 
-Sk.parse = function parse (filename, input) {
+SkAst.parse = function parse (filename, input) {
     
-    var T_COMMENT = Sk.token.tokens.T_COMMENT;
-    var T_NL = Sk.token.tokens.T_NL;
-    var T_OP = Sk.token.tokens.T_OP;
-    var T_ENDMARKER = Sk.token.tokens.T_ENDMARKER;
-    var T_ENCODING = Sk.token.tokens.T_ENCODING;
+    var T_COMMENT = SkAst.token.tokens.T_COMMENT;
+    var T_NL = SkAst.token.tokens.T_NL;
+    var T_OP = SkAst.token.tokens.T_OP;
+    var T_ENDMARKER = SkAst.token.tokens.T_ENDMARKER;
+    var T_ENCODING = SkAst.token.tokens.T_ENCODING;
 
     var endmarker_seen = false;
     var parser = makeParser(filename);
@@ -319,14 +319,14 @@ Sk.parse = function parse (filename, input) {
 
         return function() {
             if (lines.length === 0) {
-                throw new Sk.builtin.Exception("EOF");
+                throw new SkAst.builtin.Exception("EOF");
             }
 
             return lines.pop()+"\n";
         };
     }
 
-    Sk._tokenize(readline(input), "utf-8", function (tokenInfo) {
+    SkAst._tokenize(readline(input), "utf-8", function (tokenInfo) {
         var s_lineno = tokenInfo.start[0];
         var s_column = tokenInfo.start[1];
         var type = null;
@@ -353,7 +353,7 @@ Sk.parse = function parse (filename, input) {
             }
         } else {
             if (tokenInfo.type === T_OP) {
-                type = Sk.OpMap[tokenInfo.string];
+                type = SkAst.OpMap[tokenInfo.string];
             }
 
             parser.addtoken(type || tokenInfo.type, tokenInfo.string, [tokenInfo.start, tokenInfo.end, tokenInfo.line]);
@@ -365,7 +365,7 @@ Sk.parse = function parse (filename, input) {
     }, filename);
 
     if (!endmarker_seen) {
-        throw new Sk.builtin.SyntaxError("incomplete input", this.filename);
+        throw new SkAst.builtin.SyntaxError("incomplete input", this.filename);
     }
 
     /**
@@ -375,7 +375,7 @@ Sk.parse = function parse (filename, input) {
     return result;
 };
 
-Sk.parseTreeDump = function parseTreeDump (n, indent) {
+SkAst.parseTreeDump = function parseTreeDump (n, indent) {
     //return JSON.stringify(n, null, 2);
     var i;
     var ret;
@@ -383,17 +383,17 @@ Sk.parseTreeDump = function parseTreeDump (n, indent) {
     ret = "";
     ret += indent;
     if (n.type >= 256) { // non-term
-        ret += Sk.ParseTables.number2symbol[n.type] + "\n";
+        ret += SkAst.ParseTables.number2symbol[n.type] + "\n";
         for (i = 0; i < n.children.length; ++i) {
-            ret += Sk.parseTreeDump(n.children[i], indent + "  ");
+            ret += SkAst.parseTreeDump(n.children[i], indent + "  ");
         }
     } else {
-        ret += Sk.token.tok_name[n.type] + ": " + new Sk.builtin.str(n.value)["$r"]().v + "\n";
+        ret += SkAst.token.tok_name[n.type] + ": " + new SkAst.builtin.str(n.value)["$r"]().v + "\n";
     }
     return ret;
 };
 
 
-Sk.exportSymbol("Sk.Parser", Parser);
-Sk.exportSymbol("Sk.parse", Sk.parse);
-Sk.exportSymbol("Sk.parseTreeDump", Sk.parseTreeDump);
+SkAst.exportSymbol("Sk.Parser", Parser);
+SkAst.exportSymbol("Sk.parse", SkAst.parse);
+SkAst.exportSymbol("Sk.parseTreeDump", SkAst.parseTreeDump);

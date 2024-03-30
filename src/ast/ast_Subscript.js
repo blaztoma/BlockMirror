@@ -154,7 +154,7 @@ Blockly.Python['ast_Subscript'] = function (block) {
 var isWeirdSliceCase = function(slice) {
     return (slice.lower == null && slice.upper == null &&
         slice.step !== null && slice.step._astname === 'NameConstant' &&
-        slice.step.value === Sk.builtin.none.none$);
+        slice.step.value === SkAst.builtin.none.none$);
 }
 
 BlockMirrorTextToBlocks.prototype.addSliceDim = function (slice, i, values, mutations, node) {

@@ -7,16 +7,47 @@
     <list default="true" id="fe00182d-05fa-4529-8d2b-92bd952d65d2" name="Default Changelist" comment="Update random settings for pycharm">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/block_mirror.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/block_mirror.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/codemirror/python.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/codemirror/python.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/skulpt_parser.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/skulpt_parser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/ast_AnnAssign.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/ast_AnnAssign.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/ast_Assign.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/ast_Assign.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/ast_Attribute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/ast_Attribute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/ast_AugAssign.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/ast_AugAssign.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/ast_Call.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/ast_Call.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/ast_ClassDef.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/ast_ClassDef.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/ast_FunctionDef.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/ast_FunctionDef.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/ast_Global.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/ast_Global.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/ast_Import.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/ast_Import.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/ast_NameConstant.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/ast_NameConstant.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/ast_Nonlocal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/ast_Nonlocal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/ast_Num.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/ast_Num.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ast/ast_Str.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/ast_Str.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/ast_Subscript.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/ast_Subscript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/ast_Try.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/ast_Try.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/ast_functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/ast_functions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/block_mirror.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/block_mirror.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/text_editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/text_editor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/toolbars.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolbars.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skulpt/assert-dev.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/skulpt/assert-dev.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skulpt/ast.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/skulpt/ast.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skulpt/astnodes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/skulpt/astnodes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skulpt/parse_tables.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/skulpt/parse_tables.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skulpt/parser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/skulpt/parser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skulpt/skulpt_shim.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/skulpt/skulpt_shim.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skulpt/token.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/skulpt/token.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skulpt/tokenize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/skulpt/tokenize.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/text_to_blocks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/text_to_blocks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/minimal_skulpt.html" beforeDir="false" afterPath="$PROJECT_DIR$/test/minimal_skulpt.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/simple.html" beforeDir="false" afterPath="$PROJECT_DIR$/test/simple.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/simple_dev.html" beforeDir="false" afterPath="$PROJECT_DIR$/test/simple_dev.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -36,12 +67,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="JsFlowSettings">
-    <service-enabled>true</service-enabled>
-    <exe-path />
-    <other-services-enabled>true</other-services-enabled>
-    <auto-save>true</auto-save>
-  </component>
   <component name="JsbtTreeLayoutManager">
     <layout place="tools.popupnpm">
       <scroll-view-position x="0" y="0" />
@@ -57,33 +82,31 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="H:\xampp\php\php.exe" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
   <component name="ProjectId" id="1OR0VFaxkOvFIyHle2nZjV999OR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="10.16.0" />
-    <property name="javascript.nodejs.core.library.typings.version" value="10.17.28" />
-    <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../pedal-edu/pedal" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.1.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
-    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/test/minimal_skulpt.html" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "H:/xamppV8/htdocs/BlockMirror",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\acbart\Projects\blockpy-edu\BlockMirror\docs" />
@@ -241,6 +264,7 @@
       <workItem from="1641066422705" duration="2338000" />
       <workItem from="1641766804059" duration="3277000" />
       <workItem from="1647296123971" duration="670000" />
+      <workItem from="1711691838279" duration="7999000" />
     </task>
     <task id="LOCAL-00001" summary="Basics of packaging, bug fixes, better updating">
       <created>1564063805490</created>

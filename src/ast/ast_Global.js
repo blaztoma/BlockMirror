@@ -70,7 +70,7 @@ BlockMirrorTextToBlocks.prototype['ast_Global'] = function (node, parent) {
 
     let fields = {};
     for (var i = 0; i < names.length; i++) {
-        fields["NAME" + i] = Sk.ffi.remapToJs(names[i]);
+        fields["NAME" + i] = SkAst.ffi.remapToJs(names[i]);
     }
 
     return BlockMirrorTextToBlocks.create_block("ast_Global", node.lineno,

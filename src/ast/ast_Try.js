@@ -153,7 +153,7 @@ BlockMirrorTextToBlocks.prototype['ast_Try'] = function (node, parent) {
                 handledLevels.push(BlockMirrorTextToBlocks.HANDLERS_NO_AS);
             } else {
                 handledLevels.push(BlockMirrorTextToBlocks.HANDLERS_COMPLETE);
-                fields["NAME" + i] = Sk.ffi.remapToJs(handler.name.id);
+                fields["NAME" + i] = SkAst.ffi.remapToJs(handler.name.id);
             }
         }
     }

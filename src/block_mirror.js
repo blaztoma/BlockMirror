@@ -146,14 +146,14 @@ BlockMirror.prototype.initializeVariables = function () {
 };
 
 BlockMirror.prototype.loadSkulpt = function () {
-    Sk.configure({
-        __future__: Sk.python3,
+    SkAst.configure({
+        __future__: SkAst.python3,
         read: function (filename) {
-            if (Sk.builtinFiles === undefined ||
-                Sk.builtinFiles["files"][filename] === undefined) {
+            if (SkAst.builtinFiles === undefined ||
+                SkAst.builtinFiles["files"][filename] === undefined) {
                 throw "File not found: '" + filename + "'";
             }
-            return Sk.builtinFiles["files"][filename];
+            return SkAst.builtinFiles["files"][filename];
         }
     });
 };

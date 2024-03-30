@@ -320,11 +320,11 @@ BlockMirrorTextToBlocks.prototype.parseArg = function (arg, type, lineno, values
     };
     if (arg.annotation === null) {
         return BlockMirrorTextToBlocks.create_block(type,
-            lineno, {'NAME': Sk.ffi.remapToJs(arg.arg)}, values, settings);
+            lineno, {'NAME': SkAst.ffi.remapToJs(arg.arg)}, values, settings);
     } else {
         values['TYPE'] = this.convert(arg.annotation, node);
         return BlockMirrorTextToBlocks.create_block(type + "Type",
-            lineno, {'NAME': Sk.ffi.remapToJs(arg.arg)}, values, settings);
+            lineno, {'NAME': SkAst.ffi.remapToJs(arg.arg)}, values, settings);
     }
 };
 
@@ -399,13 +399,13 @@ BlockMirrorTextToBlocks.prototype['ast_FunctionDef'] = function (node, parent) {
     }
 
     let hasReturn = (returns !== null &&
-        (returns._astname !== 'NameConstant' || returns.value !== Sk.builtin.none.none$));
+        (returns._astname !== 'NameConstant' || returns.value !== SkAst.builtin.none.none$));
     if (hasReturn) {
         values['RETURNS'] = this.convert(returns, node);
     }
 
     return BlockMirrorTextToBlocks.create_block("ast_FunctionDef", node.lineno, {
-            'NAME': Sk.ffi.remapToJs(name)
+            'NAME': SkAst.ffi.remapToJs(name)
         },
         values,
         {

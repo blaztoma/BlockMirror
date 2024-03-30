@@ -124,10 +124,10 @@ BlockMirrorTextToBlocks.prototype['ast_Import'] = function (node, parent) {
     let regulars = [];
     let simpleName = "";
     for (let i = 0; i < names.length; i++) {
-        fields["NAME" + i] = Sk.ffi.remapToJs(names[i].name);
+        fields["NAME" + i] = SkAst.ffi.remapToJs(names[i].name);
         let isRegular = (names[i].asname === null);
         if (!isRegular) {
-            fields["ASNAME" + i] = Sk.ffi.remapToJs(names[i].asname);
+            fields["ASNAME" + i] = SkAst.ffi.remapToJs(names[i].asname);
             simpleName = fields["ASNAME"+i];
         } else {
             simpleName = fields["NAME"+i];
@@ -143,7 +143,7 @@ BlockMirrorTextToBlocks.prototype['ast_Import'] = function (node, parent) {
     if (node._astname === 'ImportFrom') {
         // acbart: GTS suggests module can be None for '.' but it's an empty string in Skulpt
         mutations['@from'] = true;
-        fields['MODULE'] = ('.'.repeat(node.level)) + Sk.ffi.remapToJs(node.module);
+        fields['MODULE'] = ('.'.repeat(node.level)) + SkAst.ffi.remapToJs(node.module);
     } else {
         mutations['@from'] = false;
     }

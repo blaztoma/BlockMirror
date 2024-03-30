@@ -114,7 +114,7 @@ BlockMirrorTextToBlocks.prototype['ast_ClassDef'] = function (node, parent) {
     let decorator_list = node.decorator_list;
 
     let values = {};
-    let fields = {'NAME': Sk.ffi.remapToJs(name)};
+    let fields = {'NAME': SkAst.ffi.remapToJs(name)};
 
     if (decorator_list !== null) {
         for (let i = 0; i < decorator_list.length; i++) {
@@ -135,7 +135,7 @@ BlockMirrorTextToBlocks.prototype['ast_ClassDef'] = function (node, parent) {
             if (arg === null) {
                 fields['KEYWORDNAME' + i] = "**";
             } else {
-                fields['KEYWORDNAME' + i] = Sk.ffi.remapToJs(arg);
+                fields['KEYWORDNAME' + i] = SkAst.ffi.remapToJs(arg);
             }
         }
     }
